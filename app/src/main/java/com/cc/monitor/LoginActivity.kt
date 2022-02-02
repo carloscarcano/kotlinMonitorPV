@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.cc.monitor.databinding.ActivityLoginBinding
 import com.cc.monitor.models.LoginRequestModel
 import com.cc.monitor.models.LoginResultModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -35,16 +36,23 @@ class LoginActivity : AppCompatActivity() {
         binding.etUsuario.setText("")
         binding.etPassword.setText("")
         binding.etUsuario.requestFocus()
+        binding.btnEntrar.isEnabled = true
+        binding.btnEntrar.isClickable = true
     }
 
     private fun iniciar() {
-        val etUsuario: String = binding.etUsuario.text.toString()
-        val etPassword: String = binding.etPassword.text.toString()
+        val etUsuario: String = binding.etUsuario.text.toString().trim()
+        val etPassword: String = binding.etPassword.text.toString().trim()
+
+        Snackbar.make(binding.root,  "Espere mientras se validan los datos...", Snackbar.LENGTH_SHORT).show()
 
         //continuarLogin(LoginResultModel(true, "Carlos Carcaño", "Yucatán"), "abc")
 
         if (etUsuario.isNotEmpty() && etPassword.isNotEmpty())
         {
+            binding.btnEntrar.isEnabled = false
+            binding.btnEntrar.isClickable = false
+
             CoroutineScope(Dispatchers.IO).launch {
                 val result = RestEngine.getRestEngine().create(RestServicios::class.java)
                             .validarLogin(LoginRequestModel(etUsuario, etPassword)
@@ -52,6 +60,9 @@ class LoginActivity : AppCompatActivity() {
                 val resultBody = result.body()
 
                 runOnUiThread {
+                    binding.btnEntrar.isEnabled = true
+                    binding.btnEntrar.isClickable = true
+
                     if (result.isSuccessful) {
                         continuarLogin(resultBody!!, etUsuario)
                     } else {

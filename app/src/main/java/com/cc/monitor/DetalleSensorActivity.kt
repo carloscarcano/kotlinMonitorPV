@@ -30,7 +30,7 @@ class DetalleSensorActivity : AppCompatActivity() {
                 binding.tvEstatus.setTextColor(Color.parseColor("#ff0000"))
             } else {
                 tvEstatus.text = "Cerrado"
-                binding.tvEstatus.setTextColor(Color.parseColor("#000000"))
+                binding.tvEstatus.setTextColor(Color.parseColor("#ff018786"))
             }
             tvMarca.text = datosSensor?.getString("SENSOR_MARCA")
             tvModelo.text = datosSensor?.getString("SENSOR_MODELO")

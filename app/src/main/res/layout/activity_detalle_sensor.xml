@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetalleSensorActivity">
+    tools:context=".DetalleSensorActivity"
+    android:background="@color/white">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -33,9 +34,7 @@
 
         <TextView
             android:id="@+id/tvNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
+            style="@style/DatosSensorDetalle"
             tools:text="NOMBRE DEL SENSOR" />
 
         <TextView
@@ -44,8 +43,7 @@
 
         <TextView
             android:id="@+id/tvUbicacion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/DatosSensorDetalle"
             android:textSize="20sp"
             tools:text="UBICACIÓN DEL SENSOR" />
 
@@ -55,9 +53,7 @@
 
         <TextView
             android:id="@+id/tvEstatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
+            style="@style/DatosSensorDetalle"
             tools:text="ESTATUS SENSOR" />
 
         <TextView
@@ -66,9 +62,7 @@
 
         <TextView
             android:id="@+id/tvMarca"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
+            style="@style/DatosSensorDetalle"
             tools:text="MARCA DEL SENSOR" />
 
         <TextView
@@ -77,9 +71,7 @@
 
         <TextView
             android:id="@+id/tvModelo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
+            style="@style/DatosSensorDetalle"
             tools:text="MODELO DEL SENSOR" />
 
         <TextView
@@ -88,9 +80,7 @@
 
         <TextView
             android:id="@+id/tvFechaRegistro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
+            style="@style/DatosSensorDetalle"
             tools:text="01/01/2022" />
 
         <TextView
@@ -99,9 +89,7 @@
 
         <TextView
             android:id="@+id/tvAperturas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
+            style="@style/DatosSensorDetalle"
             tools:text="24" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

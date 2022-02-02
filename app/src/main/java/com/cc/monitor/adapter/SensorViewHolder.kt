@@ -17,7 +17,7 @@ class SensorViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             binding.tvEstatus.setTextColor(Color.parseColor("#ff0000"))
         } else {
             binding.tvEstatus.text = "Cerrado"
-            binding.tvEstatus.setTextColor(Color.parseColor("#000000"))
+            binding.tvEstatus.setTextColor(Color.parseColor("#ff018786"))
         }
 
         itemView.setOnClickListener { onClickListener(sensor) }
